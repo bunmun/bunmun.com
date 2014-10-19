@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>jGFeed Demo</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script src="jGFeed.js"></script>
+		<script>
+			$(document).ready(function(){
+				//create a counter of some sort
+		        var feedCount = $('.newsContainer').length;
+		        
+		        //call jGFeed and put the URL for the feed below
+		        $.jGFeed('http://www.guidecreative.com/feed/',
+		          function(feeds){
+		            // Check for errors
+		            if(!feeds){
+		              // there was an error
+		              return false;
+		            }
+		            // do whatever you want with feeds here
+		            for(var i=0; i<feedCount; i++){
+		              var entry = feeds.entries[i];
+		              // append the feed data to the respective section it belongs to
+		              $('.newsContainer:eq('+i+') .title').append('<h2>Entry #'+i+'</h2><a href="'+entry.link+'"><p>'+entry.title+'</p></a>');
+		              $('.newsContainer:eq('+i+') .description').append('<p>'+entry.content+'</p><p>Posted on: '+entry.publishedDate+'</p>');
+		            }
+		          }, 10);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="newsContainer">
+			<div class="title">
+			
+			</div>
+			<div class="description">
+			
+			</div>
+			<hr>
+		</div>
+		<div class="newsContainer">
+			<div class="title">
+			
+			</div>
+			<div class="description">
+			
+			</div>
+			<hr>
+		</div>
+		<div class="newsContainer">
+			<div class="title">
+			
+			</div>
+			<div class="description">
+			
+			</div>
+		</div>
+	</body>
+</html>

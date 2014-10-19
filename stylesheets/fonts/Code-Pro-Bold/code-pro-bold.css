@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'CodeProBoldRegular';
+    src: url('code-pro-bold.eot');
+    src: url('code-pro-bold.eot') format('embedded-opentype'),
+         url('code-pro-bold.woff') format('woff'),
+         url('code-pro-bold.ttf') format('truetype'),
+         url('code-pro-bold.svg#CodeProBoldRegular') format('svg');
+}

@@ -1,0 +1,1328 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Sanchez);
+/* 
+ * HTML5 ✰ Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling. 
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ *
+ * Detailed information about this CSS: h5bp.com/css
+ * 
+ * ==|== normalize ==========================================================
+ */
+@font-face {
+  font-family: 'CodeProBold';
+  src: url("fonts/Code-Pro-Bold.otf");
+  src: url("fonts/code-pro-bold.eot");
+  src: url("fonts/code-pro-bold.eot") format("embedded-opentype"), url("fonts/code-pro-bold.woff") format("woff"), url("fonts/code-pro-bold.ttf") format("truetype"), url("fonts/code-pro-bold.svg#CodeProBoldRegular") format("svg");
+}
+
+@font-face {
+  font-family: 'JustVector';
+  src: url("fonts/justvectorv2-webfont.eot");
+  src: url("fonts/justvectorv2-webfont.eot?#iefix") format("eot"), url("fonts/justvectorv2-webfont.woff") format("woff"), url("fonts/justvectorv2-webfont.ttf") format("truetype"), url("fonts/justvectorv2-webfont.svg#webfontkw9J4lGf") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* | Variables
+----------------------------------------------------*/
+/*5eabca*/
+/* | Mixins
+----------------------------------------------------*/
+/* | Foundation Overrides
+----------------------------------------------------*/
+/* line 80, ../sass/bunmun_styles.scss */
+.row {
+  max-width: none;
+}
+
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/* line 86, ../sass/bunmun_styles.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+/* line 87, ../sass/bunmun_styles.scss */
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* line 88, ../sass/bunmun_styles.scss */
+audio:not([controls]) {
+  display: none;
+}
+
+/* line 89, ../sass/bunmun_styles.scss */
+[hidden] {
+  display: none;
+}
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Force vertical scrollbar in non-IE
+ * 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+/* line 101, ../sass/bunmun_styles.scss */
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 103, ../sass/bunmun_styles.scss */
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.231;
+}
+
+/* line 105, ../sass/bunmun_styles.scss */
+body, button, input, select, textarea {
+  font-family: sans-serif;
+  color: #222;
+}
+
+/* 
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+ */
+/* line 113, ../sass/bunmun_styles.scss */
+::-moz-selection {
+  background: #fe57a1;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* line 114, ../sass/bunmun_styles.scss */
+::selection {
+  background: #fe57a1;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+/* line 121, ../sass/bunmun_styles.scss */
+a {
+  color: #1c3d4a;
+}
+
+/* line 122, ../sass/bunmun_styles.scss */
+a:visited {
+  color: #1c3d4a;
+}
+
+/* line 123, ../sass/bunmun_styles.scss */
+a:hover {
+  color: #eb2587;
+}
+
+/* line 124, ../sass/bunmun_styles.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+/* line 127, ../sass/bunmun_styles.scss */
+a:hover, a:active {
+  outline: 0;
+}
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+/* line 134, ../sass/bunmun_styles.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 136, ../sass/bunmun_styles.scss */
+b, strong {
+  font-weight: bold;
+}
+
+/* line 138, ../sass/bunmun_styles.scss */
+blockquote {
+  margin: 1em 40px;
+}
+
+/* line 140, ../sass/bunmun_styles.scss */
+dfn {
+  font-style: italic;
+}
+
+/* line 142, ../sass/bunmun_styles.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* line 144, ../sass/bunmun_styles.scss */
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* line 146, ../sass/bunmun_styles.scss */
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Redeclare monospace font family: h5bp.com/j */
+/* line 149, ../sass/bunmun_styles.scss */
+pre, code, kbd, samp {
+  font-family: monospace, monospace;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+
+/* Improve readability of pre-formatted text in all browsers */
+/* line 152, ../sass/bunmun_styles.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* line 154, ../sass/bunmun_styles.scss */
+q {
+  quotes: none;
+}
+
+/* line 155, ../sass/bunmun_styles.scss */
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* line 157, ../sass/bunmun_styles.scss */
+small {
+  font-size: 85%;
+}
+
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+/* line 160, ../sass/bunmun_styles.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 161, ../sass/bunmun_styles.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 162, ../sass/bunmun_styles.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+/* line 169, ../sass/bunmun_styles.scss */
+ul, ol {
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+}
+
+/* line 170, ../sass/bunmun_styles.scss */
+ul[class] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 171, ../sass/bunmun_styles.scss */
+dd {
+  margin: 0 0 0 40px;
+}
+
+/* line 172, ../sass/bunmun_styles.scss */
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/e 
+ */
+/* line 184, ../sass/bunmun_styles.scss */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+/*
+ * Correct overflow not hidden in IE9 
+ */
+/* line 190, ../sass/bunmun_styles.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+/* line 197, ../sass/bunmun_styles.scss */
+figure {
+  margin: 0;
+}
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+/* line 204, ../sass/bunmun_styles.scss */
+form {
+  margin: 0;
+}
+
+/* line 205, ../sass/bunmun_styles.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Indicate that 'label' will shift focus to the associated form element */
+/* line 208, ../sass/bunmun_styles.scss */
+label {
+  cursor: pointer;
+}
+
+/* 
+ * 1. Correct color not inheriting in IE6/7/8/9 
+ * 2. Correct alignment displayed oddly in IE6/7 
+ */
+/* line 215, ../sass/bunmun_styles.scss */
+legend {
+  border: 0;
+  *margin-left: -7px;
+  padding: 0;
+}
+
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+ */
+/* line 223, ../sass/bunmun_styles.scss */
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+/*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ * 2. Correct inner spacing displayed oddly in IE6/7
+ */
+/* line 230, ../sass/bunmun_styles.scss */
+button, input {
+  line-height: normal;
+  *overflow: visible;
+}
+
+/*
+ * Reintroduce inner spacing in 'table' to avoid overlap and whitespace issues in IE6/7
+ */
+/* line 236, ../sass/bunmun_styles.scss */
+table button, table input {
+  *overflow: auto;
+}
+
+/*
+ * 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS
+ */
+/* line 243, ../sass/bunmun_styles.scss */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+/*
+ * Consistent box sizing and appearance
+ */
+/* line 249, ../sass/bunmun_styles.scss */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+}
+
+/* line 250, ../sass/bunmun_styles.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 251, ../sass/bunmun_styles.scss */
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* 
+ * Remove inner padding and border in FF3/4: h5bp.com/l 
+ */
+/* line 257, ../sass/bunmun_styles.scss */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* 
+ * 1. Remove default vertical scrollbar in IE6/7/8/9 
+ * 2. Allow only vertical resizing
+ */
+/* line 264, ../sass/bunmun_styles.scss */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+/* Colors for form validity */
+/* line 268, ../sass/bunmun_styles.scss */
+input:invalid, textarea:invalid {
+  background-color: #f0dddd;
+}
+
+/* line 270, ../sass/bunmun_styles.scss */
+button {
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+  border-radius: 16px;
+  color: #454545;
+  padding: 5px 14px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  background: #dedede;
+}
+/* line 75, ../sass/bunmun_styles.scss */
+button:hover {
+  background-color: #e9bd36;
+}
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+/* line 276, ../sass/bunmun_styles.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 277, ../sass/bunmun_styles.scss */
+td {
+  vertical-align: top;
+}
+
+/* ==|== primary styles =====================================================
+   Author: Ben Wong
+   ========================================================================== */
+/* line 283, ../sass/bunmun_styles.scss */
+h1, h2, h3 {
+  font-family: CodeProBold, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 284, ../sass/bunmun_styles.scss */
+h4, h5, h6 {
+  font-family: 'Sanchez', serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 285, ../sass/bunmun_styles.scss */
+p {
+  font-family: 'Sanchez', serif;
+}
+
+/* line 287, ../sass/bunmun_styles.scss */
+body {
+  background: url(../images/fabric.jpg);
+}
+
+/* line 288, ../sass/bunmun_styles.scss */
+.wrapper {
+  -webkit-box-shadow: 0px 0px 20px #727272;
+  -moz-box-shadow: 0px 0px 20px #727272;
+  box-shadow: 0px 0px 20px #727272;
+}
+
+/* line 290, ../sass/bunmun_styles.scss */
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* | Main Header
+----------------------------------------------------*/
+/* line 299, ../sass/bunmun_styles.scss */
+#MainHeader {
+  background: #5eabca url(../images/headerBG.jpg);
+  padding: 16px 0;
+}
+/* line 300, ../sass/bunmun_styles.scss */
+#MainHeader .container {
+  padding: 0 20px;
+}
+/* line 301, ../sass/bunmun_styles.scss */
+#MainHeader h1 {
+  text-align: center;
+  color: #1c3d4a;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0px #fff;
+}
+/* line 302, ../sass/bunmun_styles.scss */
+#MainHeader h1 .light {
+  color: #f6f6f5;
+  text-shadow: 2px 2px 0px #1c3d4a;
+}
+/* line 303, ../sass/bunmun_styles.scss */
+#MainHeader h1 .alternate {
+  font-family: 'Sanchez', serif;
+  font-size: 24px;
+  text-transform: lowercase;
+}
+
+/* | Intro
+----------------------------------------------------*/
+/* line 312, ../sass/bunmun_styles.scss */
+#Intro {
+  padding: 0;
+  background: #f6f6f5 url(../images/BenWong_full.png) no-repeat 95% 10%;
+}
+/* line 316, ../sass/bunmun_styles.scss */
+#Intro .container {
+  padding: 0;
+}
+/* line 318, ../sass/bunmun_styles.scss */
+#Intro .container .columns {
+  padding: 5em 1em;
+}
+/* line 320, ../sass/bunmun_styles.scss */
+#Intro .role-descriptions {
+  position: relative;
+}
+/* line 322, ../sass/bunmun_styles.scss */
+#Intro .role-descriptions .description {
+  display: none;
+  margin-bottom: 1em;
+}
+/* line 325, ../sass/bunmun_styles.scss */
+#Intro .role-descriptions .description h2 {
+  font-size: 1.7em;
+  font-family: 'Sanchez', serif;
+  line-height: 2em;
+}
+/* line 326, ../sass/bunmun_styles.scss */
+#Intro .role-descriptions .description p {
+  font-size: 1em;
+  margin-bottom: 0.3em;
+  line-height: 2em;
+}
+/* line 330, ../sass/bunmun_styles.scss */
+#Intro .role-descriptions .description:first-child {
+  display: block;
+}
+/* line 334, ../sass/bunmun_styles.scss */
+#Intro .highlight {
+  display: inline;
+  padding: 0.25em;
+  background-color: rgba(227, 205, 6, 0.95);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  /*-webkit-box-shadow: 10px 0 0 rgba(227,205,6,0.8), -10px 0 0 rgba(227,205,6,0.8);*/
+  /*box-shadow: 10px 0 0 rgba(227,205,6,0.8), -10px 0 0 rgba(227,205,6,0.8);*/
+}
+/* line 343, ../sass/bunmun_styles.scss */
+#Intro h3 {
+  color: #d0e5ed;
+  font-size: 1.17em;
+  font-family: 'Sanchez', serif;
+  line-height: 2em;
+  float: left;
+  margin-right: 0.5em;
+}
+/* line 344, ../sass/bunmun_styles.scss */
+#Intro #RoleSelector .columns {
+  padding: 0;
+}
+/* line 345, ../sass/bunmun_styles.scss */
+#Intro .role-selector {
+  padding: 0.75em 1em;
+  background: rgba(0, 0, 0, 0.6);
+}
+/* line 350, ../sass/bunmun_styles.scss */
+#Intro .role-nav {
+  background: none;
+  height: 37px;
+  position: relative;
+  width: 228px;
+  float: left;
+}
+/* line 356, ../sass/bunmun_styles.scss */
+#Intro .role-nav ul.buttonList {
+  width: auto;
+  float: left;
+  position: relative;
+  z-index: 100;
+}
+/* line 361, ../sass/bunmun_styles.scss */
+#Intro .role-nav ul.buttonList li {
+  margin: 3px 0 0 0;
+  height: auto;
+  display: block;
+}
+/* line 365, ../sass/bunmun_styles.scss */
+#Intro .role-nav ul.buttonList li a {
+  font-size: 0.92rem;
+  font-family: 'Sanchez';
+  color: #d0e5ed;
+  display: block;
+  visibility: hidden;
+  padding: 0.25em 0.5em;
+  background-color: #1c3d4a;
+}
+/* line 366, ../sass/bunmun_styles.scss */
+#Intro .role-nav ul.buttonList li a.selected, #Intro .role-nav ul.buttonList li .role-button:hover {
+  visibility: visible;
+  display: block;
+  background: #eb2587;
+  color: #f6f6f5;
+}
+/* line 370, ../sass/bunmun_styles.scss */
+#Intro .role-nav a.expand {
+  position: absolute;
+  top: 3px;
+  right: -20px;
+  text-indent: -50000px;
+  display: block;
+  width: 30px;
+  height: 31px;
+  background-color: #1c3d4a;
+  box-sizing: border-box;
+  padding: 0 8px;
+}
+/* line 378, ../sass/bunmun_styles.scss */
+#Intro .role-nav a.expand span {
+  /*position: absolute;*/
+  display: block;
+  width: 0.88889rem;
+  height: 0;
+  -webkit-box-shadow: 1px 10px 1px 1px white, 1px 16px 1px 1px white, 1px 22px 1px 1px white;
+  box-shadow: 0 10px 0 1px white, 0 16px 0 1px white, 0 22px 0 1px white;
+}
+
+/* | Social
+----------------------------------------------------*/
+/* line 397, ../sass/bunmun_styles.scss */
+#Social {
+  background-color: #d0e5ed;
+}
+/* line 398, ../sass/bunmun_styles.scss */
+#Social .row {
+  position: relative;
+}
+/* line 399, ../sass/bunmun_styles.scss */
+#Social .container {
+  padding: 0;
+}
+/* line 400, ../sass/bunmun_styles.scss */
+#Social h3 {
+  float: left;
+}
+/* line 401, ../sass/bunmun_styles.scss */
+#Social a.social-icon {
+  background-image: url(../images/socialIcons.png);
+  background-repeat: no-repeat;
+  display: block;
+  width: 60px;
+  height: 60px;
+  text-indent: -500000px;
+  position: relative;
+  margin: 0 auto;
+}
+/* line 412, ../sass/bunmun_styles.scss */
+#Social a.wordpress {
+  background-position: 0 0;
+}
+/* line 413, ../sass/bunmun_styles.scss */
+#Social a.twitter {
+  background-position: -83px 0;
+}
+/* line 414, ../sass/bunmun_styles.scss */
+#Social a.tumblr {
+  background-position: -163px 0;
+}
+/* line 415, ../sass/bunmun_styles.scss */
+#Social a.soundcloud {
+  background-position: -243px 0;
+}
+/* line 416, ../sass/bunmun_styles.scss */
+#Social a.flickr {
+  background-position: -323px 0;
+}
+/* line 417, ../sass/bunmun_styles.scss */
+#Social .social-box {
+  float: left;
+  width: 20%;
+  height: 100px;
+}
+/* line 418, ../sass/bunmun_styles.scss */
+#Social div.wordpress {
+  background: #c7c7c7;
+}
+/* line 419, ../sass/bunmun_styles.scss */
+#Social div.twitter {
+  background: #2f99c8;
+}
+/* line 420, ../sass/bunmun_styles.scss */
+#Social div.tumblr {
+  background: #1c3d4a;
+}
+
+/* line 424, ../sass/bunmun_styles.scss */
+#Feeds {
+  font-size: 0.85em;
+  background-color: #d0e5ed;
+}
+/* line 427, ../sass/bunmun_styles.scss */
+#Feeds .row {
+  position: relative;
+}
+/* line 428, ../sass/bunmun_styles.scss */
+#Feeds .container {
+  padding: 0;
+  margin: 0 auto;
+}
+/* line 429, ../sass/bunmun_styles.scss */
+#Feeds .social-icon {
+  background-image: url(../images/socialIcons.png);
+  background-repeat: no-repeat;
+  width: 68px;
+  height: 68px;
+  text-indent: -500000px;
+  position: relative;
+  top: -30px;
+  margin: 0 auto;
+}
+/* line 438, ../sass/bunmun_styles.scss */
+#Feeds .social-icon a {
+  color: #fff;
+}
+/* line 440, ../sass/bunmun_styles.scss */
+#Feeds .rssItem {
+  background: #ffffff;
+  width: 25%;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  padding: 2em;
+  border-width: 1px;
+  border-style: solid;
+  bordder-color: #14110f;
+  position: relative;
+}
+/* line 452, ../sass/bunmun_styles.scss */
+#Feeds .rssItem h4 {
+  font-size: 1em;
+}
+/* line 453, ../sass/bunmun_styles.scss */
+#Feeds .rssItem h5 {
+  font-size: 0.92em;
+}
+/* line 454, ../sass/bunmun_styles.scss */
+#Feeds .rssItem h6 {
+  font-size: 0.75em;
+}
+/* line 456, ../sass/bunmun_styles.scss */
+#Feeds .selectB {
+  background-color: #c7c7c7;
+  position: relative;
+}
+/* line 459, ../sass/bunmun_styles.scss */
+#Feeds .selectB h4, #Feeds .selectB h5, #Feeds .selectB h6 {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.75);
+  float: left;
+  clear: both;
+  padding: 3px;
+}
+/* line 461, ../sass/bunmun_styles.scss */
+#Feeds .twitter {
+  background-color: #2f99c8;
+  /*height: 150px;*/
+  position: relative;
+}
+/* line 465, ../sass/bunmun_styles.scss */
+#Feeds .twitter p {
+  color: #fff;
+}
+/* line 466, ../sass/bunmun_styles.scss */
+#Feeds .twitter .created_by, #Feeds .twitter .posted {
+  font-size: 0.82em;
+  color: #d0e5ed;
+}
+/* line 469, ../sass/bunmun_styles.scss */
+#Feeds .tumblr {
+  background-color: #2c4762;
+  position: relative;
+}
+/* line 472, ../sass/bunmun_styles.scss */
+#Feeds .tumblr h4, #Feeds .tumblr h5, #Feeds .tumblr h6 {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.75);
+  float: left;
+  clear: both;
+  padding: 3px;
+}
+/* line 475, ../sass/bunmun_styles.scss */
+#Feeds .socialIcon {
+  font-family: 'JustVector';
+  font-size: 2em;
+  color: #fff;
+  position: absolute;
+  bottom: 10px;
+  right: 16px;
+}
+
+/* line 479, ../sass/bunmun_styles.scss */
+.wrapSocial {
+  text-align: center;
+  padding: 0 0 40px;
+  position: relative;
+  border-width: 0 6px;
+  border-style: solid;
+  border-color: black;
+}
+/* line 486, ../sass/bunmun_styles.scss */
+.wrapSocial time {
+  font-size: 10px;
+}
+/* line 487, ../sass/bunmun_styles.scss */
+.wrapSocial h2 {
+  font-size: 24px;
+}
+/* line 488, ../sass/bunmun_styles.scss */
+.wrapSocial .activity {
+  text-align: left;
+  margin-bottom: 24px;
+  background-color: #f6f6f5;
+  border-width: 5px 0 5px;
+  border-style: solid;
+  border-color: #3a3a3a;
+}
+/* line 494, ../sass/bunmun_styles.scss */
+.wrapSocial .activity h3, .wrapSocial .activity h6 {
+  font-family: 'Sanchez', serif;
+}
+/* line 495, ../sass/bunmun_styles.scss */
+.wrapSocial .activity h3 {
+  font-size: 18px;
+  padding: 0 20px;
+}
+/* line 496, ../sass/bunmun_styles.scss */
+.wrapSocial .activity h6 {
+  font-size: 14px;
+}
+/* line 498, ../sass/bunmun_styles.scss */
+.wrapSocial .activity ul.posts li a.block {
+  display: block;
+  padding: 12px 20px;
+  line-height: 12px;
+  border-width: 1px 0 0;
+  border-style: solid;
+  border-color: #d1d1d0;
+}
+/* line 501, ../sass/bunmun_styles.scss */
+.wrapSocial .description {
+  padding: 0 20px 30px;
+}
+
+/* line 506, ../sass/bunmun_styles.scss */
+#WordPress {
+  background-color: #c7c7c7;
+}
+/* line 508, ../sass/bunmun_styles.scss */
+#WordPress .social-icon {
+  width: 66px;
+}
+/* line 509, ../sass/bunmun_styles.scss */
+#WordPress .activity {
+  background-color: #f6f6f5;
+  border-width: 5px 0 5px;
+  border-style: solid;
+  border-color: #3a3a3a;
+}
+/* line 510, ../sass/bunmun_styles.scss */
+#WordPress .activity a {
+  color: #342c24;
+}
+/* line 511, ../sass/bunmun_styles.scss */
+#WordPress .activity a:hover {
+  background-color: #eb2587;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* line 515, ../sass/bunmun_styles.scss */
+#Twitter {
+  background-color: #2f99c8;
+  color: #e1e0e0;
+}
+/* line 518, ../sass/bunmun_styles.scss */
+#Twitter .social-icon {
+  background-position: 0 -68px;
+}
+/* line 520, ../sass/bunmun_styles.scss */
+#Twitter .activity h3 {
+  color: #342c24;
+}
+/* line 523, ../sass/bunmun_styles.scss */
+#Twitter .posts li {
+  font-family: Helvetica, sans-serif;
+  padding: 16px 20px 28px;
+  color: #342c24;
+  font-size: 12px;
+  line-height: 18px;
+  border-width: 1px 0 0;
+  border-style: solid;
+  border-color: #d1d1d0;
+}
+/* line 532, ../sass/bunmun_styles.scss */
+#Twitter .posts li p {
+  font-family: Helvetica, sans-serif;
+}
+/* line 533, ../sass/bunmun_styles.scss */
+#Twitter .posts li time {
+  float: left;
+  padding-right: 6px;
+}
+/* line 534, ../sass/bunmun_styles.scss */
+#Twitter .posts li span {
+  float: right;
+}
+/* line 535, ../sass/bunmun_styles.scss */
+#Twitter .posts li span a {
+  border: 0 none;
+  display: block;
+  margin: 0 6px;
+  float: left;
+  padding: 0;
+  background-image: url(../images/everything-spritev2.png);
+  text-indent: -50000px;
+  width: 16px;
+  height: 16px;
+}
+/* line 536, ../sass/bunmun_styles.scss */
+#Twitter .posts li a.tweet_reply:hover {
+  background-position: -16px 0;
+}
+/* line 537, ../sass/bunmun_styles.scss */
+#Twitter .posts li a.tweet_retweet {
+  background-position: -81px 0;
+}
+/* line 538, ../sass/bunmun_styles.scss */
+#Twitter .posts li a.tweet_retweet:visited {
+  background-position: -113px 0;
+}
+/* line 539, ../sass/bunmun_styles.scss */
+#Twitter .posts li a.tweet_retweet:hover {
+  background-position: -97px 0;
+}
+/* line 542, ../sass/bunmun_styles.scss */
+#Twitter .posts li a.tweet_fave {
+  background-position: -31px 0;
+}
+/* line 543, ../sass/bunmun_styles.scss */
+#Twitter .posts li a.tweet_fave:visited {
+  background-position: -63px 0;
+}
+/* line 544, ../sass/bunmun_styles.scss */
+#Twitter .posts li a.tweet_fave:hover {
+  background-position: -47px 0;
+}
+
+/* line 548, ../sass/bunmun_styles.scss */
+#Tumblr {
+  background-color: #2c4762;
+  color: #e1e0e0;
+}
+/* line 551, ../sass/bunmun_styles.scss */
+#Tumblr .social-icon {
+  background-position: 0 -136px;
+}
+/* line 554, ../sass/bunmun_styles.scss */
+#Tumblr .activity .posts .post {
+  height: 120px;
+}
+/* line 556, ../sass/bunmun_styles.scss */
+#Tumblr .activity .posts .post p.preview {
+  height: 20px;
+  overflow: truncate;
+}
+
+/* line 566, ../sass/bunmun_styles.scss */
+#Experience {
+  background: #d0e5ed;
+}
+
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+/* For image replacement */
+/* line 580, ../sass/bunmun_styles.scss */
+.ir {
+  display: block;
+  border: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+}
+
+/* line 581, ../sass/bunmun_styles.scss */
+.ir br {
+  display: none;
+}
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+/* line 584, ../sass/bunmun_styles.scss */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+/* line 587, ../sass/bunmun_styles.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+/* line 590, ../sass/bunmun_styles.scss */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+/* line 593, ../sass/bunmun_styles.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/* Contain floats: h5bp.com/q */
+/* line 596, ../sass/bunmun_styles.scss */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+/* line 597, ../sass/bunmun_styles.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 598, ../sass/bunmun_styles.scss */
+.clearfix {
+  zoom: 1;
+}
+
+/* ==|== media queries ======================================================
+   PLACEHOLDER Media Queries for Responsive Design.
+   These override the primary ('mobile first') styles
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (max-width: 480px) {
+  /* Style adjustments for viewports 480px and over go here */
+  /* line 611, ../sass/bunmun_styles.scss */
+  #MainHeader .container {
+    padding: 0 2.6em;
+  }
+
+  /* line 617, ../sass/bunmun_styles.scss */
+  #Intro .container {
+    padding: 12px 0;
+  }
+  /* line 618, ../sass/bunmun_styles.scss */
+  #Intro .container .columns {
+    padding: 1em;
+  }
+  /* line 623, ../sass/bunmun_styles.scss */
+  #Intro .container .description h2 {
+    font-size: 1.33em;
+  }
+  /* line 626, ../sass/bunmun_styles.scss */
+  #Intro .buttonList {
+    top: 0;
+  }
+
+  /* line 629, ../sass/bunmun_styles.scss */
+  #Social .wrapSocial {
+    border-top: 5px solid #342c24;
+    border-width: 5px 0 0;
+  }
+  /* line 630, ../sass/bunmun_styles.scss */
+  #Social .container {
+    padding: 0 0 10em;
+  }
+
+  /* line 634, ../sass/bunmun_styles.scss */
+  #Feeds .rssItem {
+    width: 100%;
+  }
+  /* line 636, ../sass/bunmun_styles.scss */
+  #Feeds .twitter {
+    width: 50%;
+  }
+}
+@media (min-width: 480px) and (max-width: 580px) {
+  /* Style adjustments for viewports 768px and over go here */
+  /* line 644, ../sass/bunmun_styles.scss */
+  #Intro .buttonList {
+    top: 0;
+  }
+
+  /* line 647, ../sass/bunmun_styles.scss */
+  #Social .wrapSocial {
+    border-top: 5px solid #342c24;
+  }
+
+  /* line 650, ../sass/bunmun_styles.scss */
+  #Feeds .rssItem {
+    width: 50%;
+  }
+}
+@media (min-width: 580px) and (max-width: 768px) {
+  /* line 658, ../sass/bunmun_styles.scss */
+  #Intro .buttonList {
+    top: 0;
+  }
+
+  /* line 661, ../sass/bunmun_styles.scss */
+  #Feeds .rssItem {
+    width: 50%;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  /* Style adjustments for viewports 979px and over go here */
+  /* line 669, ../sass/bunmun_styles.scss */
+  #Intro .buttonList {
+    top: 0;
+  }
+
+  /* line 672, ../sass/bunmun_styles.scss */
+  #Feeds .rssItem {
+    width: 33.333333%;
+  }
+}
+@media (min-width: 979px) and (max-width: 1200px) {
+  /* Style adjustments for viewports 979px and over go here */
+  /* line 678, ../sass/bunmun_styles.scss */
+  .wrapper {
+    width: auto;
+    margin: 0 auto;
+  }
+
+  /* line 681, ../sass/bunmun_styles.scss */
+  #Intro .buttonList {
+    top: 0;
+  }
+
+  /* line 684, ../sass/bunmun_styles.scss */
+  #Feeds .rssItem {
+    width: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 689, ../sass/bunmun_styles.scss */
+  .wrapper {
+    max-width: 96em;
+    margin: 0 auto;
+  }
+
+  /* line 692, ../sass/bunmun_styles.scss */
+  #Intro .role-selector {
+    padding: 1em;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  /* line 695, ../sass/bunmun_styles.scss */
+  #Intro .role-selector h3 {
+    color: #d0e5ed;
+    font-size: 1.17em;
+    font-family: 'Sanchez', serif;
+    line-height: 2em;
+    float: left;
+    margin-right: 10px;
+  }
+  /* line 698, ../sass/bunmun_styles.scss */
+  #Intro .role-nav {
+    background: none;
+    height: auto;
+    width: auto;
+  }
+  /* line 702, ../sass/bunmun_styles.scss */
+  #Intro .role-nav ul.buttonList {
+    width: auto;
+    float: left;
+    position: relative;
+    top: 0 !important;
+  }
+  /* line 707, ../sass/bunmun_styles.scss */
+  #Intro .role-nav ul.buttonList li {
+    float: left;
+    margin: 3px 6px 0 0;
+    height: auto;
+  }
+  /* line 711, ../sass/bunmun_styles.scss */
+  #Intro .role-nav ul.buttonList li a {
+    font-size: 0.92rem;
+    font-family: 'Sanchez';
+    color: #d0e5ed;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    background-color: #1c3d4a;
+    visibility: visible !important;
+  }
+  /* line 712, ../sass/bunmun_styles.scss */
+  #Intro .role-nav ul.buttonList li a.selected {
+    background: #eb2587;
+    color: #f6f6f5;
+  }
+  /* line 715, ../sass/bunmun_styles.scss */
+  #Intro .role-nav a.expand {
+    display: none;
+  }
+
+  /* line 720, ../sass/bunmun_styles.scss */
+  #Feeds .rssItem {
+    width: 20%;
+  }
+}
+/* ==|== print styles =======================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+@media print {
+  /* line 730, ../sass/bunmun_styles.scss */
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  /* Black prints faster: h5bp.com/s */
+  /* line 731, ../sass/bunmun_styles.scss */
+  a, a:visited {
+    text-decoration: underline;
+  }
+
+  /* line 732, ../sass/bunmun_styles.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 733, ../sass/bunmun_styles.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /* line 734, ../sass/bunmun_styles.scss */
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+
+  /* Don't show links for images, or javascript/internal links */
+  /* line 735, ../sass/bunmun_styles.scss */
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /* line 736, ../sass/bunmun_styles.scss */
+  thead {
+    display: table-header-group;
+  }
+
+  /* h5bp.com/t */
+  /* line 737, ../sass/bunmun_styles.scss */
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+  /* line 738, ../sass/bunmun_styles.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  /* line 740, ../sass/bunmun_styles.scss */
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 741, ../sass/bunmun_styles.scss */
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}
