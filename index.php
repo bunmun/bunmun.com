@@ -30,17 +30,23 @@
 <div class="wrapper">
 
 	<header id="MainHeader" class="row">
+		
   		<div class="large-12 columns container">
-	  		<h1>My name is Ben Wong <span class="alternate">aka</span> <span class="light">Bun Mun</span><span class="alternate">.</span></h1>
+	  		<h1><span class="highlight">My name is Ben Wong <span class="alternate">aka</span> <span class="light">Bun Mun</span><span class="alternate">.</span></span></h1>
   		</div>
   	</header>
   	<section id="Intro" class="row">
-  		
-	  		<div class="container">
-	  		<div class="large-8 columns">
+  	<video autoplay loop muted poster="images/video-bg2.jpg" id="video-bg">
+  			<source src="video/deskwork2.webm" type="video/webm">
+  			<source src="video/deskwork2.ogg" type="video/ogg">
+  			<source src="video/deskwork2.mp4" type="video/mp4">
+  		</video>
+	  		<div class="container group">
+	  		<div class="large-5 columns"></div>
+	  		<div class="large-7 columns">
 	  			<div class="role-descriptions">
 			  		<div class="description" data-role="strategic-services-manager">
-			  			<h2><span class="highlight">I am the Strategic Services Manager at <a href="http://www.blackbaud.com">Blackbaud</a></span></h2>
+			  			<h2><span class="highlight">I am the Creative Services Manager at <a href="http://www.blackbaud.com">Blackbaud</a></span></h2>
 			  			<p><span class="highlight">Charleston is known as the 'Silicon Harbor' because of its thriving tech scene. Blackbaud is the technology company that started it all. I lead a team of designers, developers and strategists to help nonprofit organizations make the world a better place.</span></p>
 			  		</div>
 			  		<div class="description" data-role="digital-experience-director">
@@ -67,14 +73,14 @@
 	  			
 		  	</div><!-- End large-8 columns -->
   		  	</div><!-- End container -->
-  		  	<div id="RoleSelector">
-  		  		<div class="large-12 columns">
+  		  	<div id="RoleSelector" class="group">
+  		  		<div class="large-6 columns">
   		  		
   		  		<div class="role-selector group">
 			  		<h3>I've also been known as a:</h3>
 			  		<nav class="role-nav">
 				  		<ul class="title-area buttonList">
-				  			<li class="name"><a href="#" class="role-button selected" data-role="strategic-services-manager" data-image="BenWong_full.png" data-image-size="auto" data-image-pos="95% 10%">Strategic Services Manager</a></li>
+				  			<li class="name"><a href="#" class="role-button selected" data-role="strategic-services-manager" data-image="" data-image-size="auto" data-image-pos="95% 10%">Strategic Services Manager</a></li>
 				  			<li class="name"><a href="#" class="role-button" data-role="digital-experience-director" data-image="blueion.jpg" data-image-size="cover" data-image-pos="center center">Digital Experience Director</a></li>
 				  			<li class="name"><a href="#" class="role-button" data-role="web-designer-developer" data-image="design_develop_bw.jpg" data-image-size="cover" data-image-pos="center">Designer &amp; Developer</a></li>
 				  			<li class="name"><a href="#" class="role-button" data-role="conference-speaker" data-image="refresh.jpg" data-image-size="cover" data-image-pos="left top">Conference Speaker</a></li>
@@ -84,6 +90,19 @@
 				  		<a href="#" class="expand"><span></span></a>
 			  		</nav>
 	  			</div><!-- End role-selector -->
+  		  		</div><!--END Column -->
+  		  		<div class="large-6 columns social-nav">
+	  		  		<h3>Find me at:</h3>
+	  		  		<a href="http://www.facebook.com/bunmun"><span class="socialIcon">b</span></a>
+	  		  		<a href="http://www.twitter.com/bunmun"><span class="socialIcon">a</span></a>
+	  		  		<a href="http://www.selectb.com"><span class="socialIcon">y</span></a>
+	  		  		<a href="http://bunmblr.bunmun.com"><span class="socialIcon">z</span></a>
+	  		  		<a href="https://www.flickr.com/photos/selectb/"><span class="socialIcon">v</span></a>
+	  		  		<a href="http://instagram.com/bunmun"><span class="socialIcon">x</span></a>
+	  		  		<a href="http://www.youtube.com/kidcapsule"><span class="socialIcon">r</span></a>
+	  		  		<a href="https://soundcloud.com/b-23"><span class="socialIcon">n</span></a>
+	  		  		<a href="http://www.pinterest.com/bunmun"><span class="socialIcon">d</span></a>
+	  		  		<a href="https://www.linkedin.com/pub/ben-wong/38/4a1/612"><span class="socialIcon">j</span></a>
   		  		</div>
   		  		
   		  		
@@ -106,28 +125,7 @@
 			<?php buildFeeds("http://www.selectb.com/feed/", "../Bunmun_Foundation/php/TwitterSettings.php", "http://blog.selectb.com/feed/", "http://bunmun.tumblr.com/rss"); ?>
 										
 		</div><!-- End: .container -->
-	</section><!-- End: #Feeds -->
-	<!--<section id="Experience">
-		<div class="container">
-			<div class="row">
-				<h1>Experience</h1>
-				<div class="job">
-					<h2>Creative &amp; Strategic Services Manager</h2>
-					<h3>Blackbaud</h3>
-					<ul>
-						<li>Currently leading a team of strategists, designers and developers to create solutions that help our customers achieve success.</li>
-					</ul>
-				</div>
-				<div class="job">
-					<h2>Digital Experience Director</h2>
-				</div>
-				<div class="job">
-					<h2>Interactive Development Manager</h2>
-				</div>
-			</div>
-		</div>
-	</section>-->
-	
+	</section><!-- End: #Feeds -->	
 	<footer>
 		
 	</footer><!-- End: #footer

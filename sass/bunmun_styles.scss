@@ -13,6 +13,7 @@
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
 @import url(http://fonts.googleapis.com/css?family=Sanchez);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
 
 @font-face {
     font-family: 'CodeProBold';
@@ -36,6 +37,17 @@
 
 }
 
+@font-face {
+    font-family: 'socicon';
+    src: url('fonts/socicon-webfont.eot');
+    src: url('fonts/socicon-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/socicon-webfont.woff') format('woff'),
+         url('fonts/socicon-webfont.ttf') format('truetype'),
+         url('fonts/socicon-webfont.svg#sociconregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /* | Variables
 ----------------------------------------------------*/
@@ -46,6 +58,8 @@ $light-text: #e1e0e0;
 $light-blue: #d0e5ed;
 $dark-blue: #1c3d4a;
 $dull-green: #3a7d73;
+$darkest-green: #283a3b;
+$darkest-green-trans: rgba(40, 58, 59, 0.95);
 $dark-brown: #342c24;
 $yellow: #e9bd36;
 $highlight-trans: rgba(227,205,6,0.95);
@@ -75,6 +89,16 @@ $default-box-shadow-blur: 20px;
 	&:hover{ background-color: $yellow;}
 }
 
+@mixin highlight{
+				display: inline;
+				padding: 0.25em;
+				background-color: $highlight-trans;
+				-webkit-box-decoration-break: clone;
+				box-decoration-break: clone;
+				/*-webkit-box-shadow: 10px 0 0 rgba(227,205,6,0.8), -10px 0 0 rgba(227,205,6,0.8);*/
+				/*box-shadow: 10px 0 0 rgba(227,205,6,0.8), -10px 0 0 rgba(227,205,6,0.8);*/
+}
+
 /* | Foundation Overrides
 ----------------------------------------------------*/
 .row{ max-width: none;}
@@ -84,7 +108,7 @@ $default-box-shadow-blur: 20px;
    ========================================================================== */
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
-audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio, canvas{ display: inline-block; *display: inline; *zoom: 1; }
 audio:not([controls]) { display: none; }
 [hidden] { display: none; }
 
@@ -102,7 +126,7 @@ html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-
 
 body { @include no-margin-padding; font-size: 16px; line-height: 1.231; }
 
-body, button, input, select, textarea { font-family: sans-serif; color: #222; }
+body, button, input, select, textarea { font-family: 'Lato', sans-serif; color: #222; }
 
 /* 
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -280,9 +304,11 @@ td { vertical-align: top; }
 /* ==|== primary styles =====================================================
    Author: Ben Wong
    ========================================================================== */
-h1, h2, h3{ font-family: CodeProBold, Helvetica, sans-serif; margin: 0; padding: 0;}
-h4, h5, h6{font-family: 'Sanchez', serif; margin: 0; padding: 0;}
-p{font-family: 'Sanchez', serif;}
+
+h1{font-family: 'Lato', sans-serif; font-weight: 100; letter-spacing: 1px; text-transform: uppercase;}
+
+h2, h3, h4, h5, h6{font-family: 'Lato', sans-serif; margin: 0; padding: 0;}
+p{font-family: 'Lato', sans-serif; font-weight: 300;}
 
 body{ background: url(../images/fabric.jpg);}
 .wrapper{ @include single-box-shadow; }
@@ -296,11 +322,13 @@ body{ background: url(../images/fabric.jpg);}
 /* | Main Header
 ----------------------------------------------------*/
 
-#MainHeader{ background: #5eabca url(../images/headerBG.jpg); padding: 16px 0;
-	.container{ padding: 0 20px;}
-	h1{text-align: center; color: #1c3d4a; font-size: 30px; text-transform: uppercase; text-shadow: 1px 1px 0px #fff;
-		.light{ color: $off-white; text-shadow: 2px 2px 0px #1c3d4a;}
-		.alternate{ font-family: 'Sanchez', serif; font-size: 24px; text-transform: lowercase;}
+#MainHeader{
+	background-color: $darkest-green-trans;
+	text-align: center;
+	.container{ padding: 20px;}
+	h1{ color: $light-blue; font-size: 20px;
+		.light{ color: $light-blue;}
+		.alternate{font-weight: 100; font-size: 14px; text-transform: lowercase;}
 	}
 }
 
@@ -311,18 +339,17 @@ body{ background: url(../images/fabric.jpg);}
 ----------------------------------------------------*/
 #Intro{  
 	padding: 0;
-	background: $off-white url(../images/BenWong_full.png) no-repeat 95% 10%;
-	
+	#video-bg{width: 100%; position: fixed !important; top: 0; left: 0; background: transparent url(../images/video-bg2.jpg) no-repeat; background-size: cover; z-index: -100;}
 	.container{ padding: 0;
 		
-		.columns{padding: 5em 1em;}
+		.columns{padding:1em;}
 	}
 	.role-descriptions{
 		position: relative;
 		.description{
 			display: none;		
 			margin-bottom: 1em;
-			h2{ font-size: 1.7em; font-family: 'Sanchez', serif; line-height: 2em;}
+			h2{ font-size: 1.4em; font-family: 'Lato', sans-serif; line-height: 2em;}
 			p{font-size: 1em; margin-bottom: 0.3em; line-height: 2em;}
 			
 		}
@@ -332,60 +359,73 @@ body{ background: url(../images/fabric.jpg);}
 	}
 	
 	.highlight{
-				display: inline;
-				padding: 0.25em;
-				background-color: $highlight-trans;
-				-webkit-box-decoration-break: clone;
-				box-decoration-break: clone;
-				/*-webkit-box-shadow: 10px 0 0 rgba(227,205,6,0.8), -10px 0 0 rgba(227,205,6,0.8);*/
-				/*box-shadow: 10px 0 0 rgba(227,205,6,0.8), -10px 0 0 rgba(227,205,6,0.8);*/
+				@include highlight;
 	}
-	h3{ color: $light-blue; font-size: 1.17em; font-family: 'Sanchez', serif; line-height: 2em; float: left; margin-right: 0.5em;}
-	#RoleSelector .columns{ padding: 0;}
-	.role-selector{
+	
+	#RoleSelector{ 
 		padding: 0.75em 1em;
-		background: $dark-bg-trans;
+		background: $dark-bg-trans; text-align: center;
+		h3{ color: $light-blue; font-size: 1.17em; font-weight: 100; letter-spacing: 1px; line-height: 2em; text-align: center;}
 		
-	}
-	.role-nav{
-		background: none;
-		height: 37px;
-		position: relative;
-		width: 228px;
-		float: left;
-		ul.buttonList{ 
-			width: auto;
-			float: left;
-			position: relative;
-			z-index: 100;
-			li{ 
-				margin: 3px 0 0 0;
-				height: auto;
-				display: block;
-				a{ font-size: 0.92rem; font-family: 'Sanchez'; color: $light-blue; display:block; visibility: hidden; padding: 0.25em 0.5em; background-color: $dark-blue; }
-				a.selected, .role-button:hover{ visibility: visible; display: block; background: $pink; color: $off-white;}
+		.social-nav{
+			text-align: center;
+			padding: 0.25em 0;
+			.socialIcon{font-family: 'socicon'; font-size: 1.4em; color: $off-white; padding: 0 0.25em; text-align: center;
+			}
+			a:hover{
+			.socialIcon{color: $pink;}
+		}
+		}
+		
+		.columns{ padding: 0;}
+		
+		.role-selector{
+			text-align: center;
+			.role-nav{
+				background: none;
+				height: 37px;
+				position: relative;
+				//max-width: 400px;
+				ul.buttonList{ 
+					//width: auto;
+					position: relative;
+					z-index: 100;
+					li{ 
+						margin: 3px 0 0 0;
+						height: auto;
+						display: block;
+						a{ font-size: 1rem; font-weight: 300; font-family: 'Lato'; color: $light-blue; display:block; /*visibility: hidden;*/ position:absolute; left: -50000px; padding: 0.25em 0; background-color: $dark-blue; }
+						a.selected, .role-button:hover{ /*visibility: visible;*/ position: relative; left: 0; display: block; background: $pink; color: $off-white;}
+						
+					}
+				}
+				a.expand{ 
+					position: absolute; top: 0; right: 0;text-indent: -50000px;
+					display: block;
+					width: 30px;
+					height: 33px;
+					background-color: $dark-blue;
+					box-sizing: border-box;
+					padding:0 8px;
+					z-index: 100;
+					span{
+						/*position: absolute;*/
+						display: block;
+						width: 0.88889rem;
+						height: 0;
+						-webkit-box-shadow: 1px 10px 1px 1px white, 1px 16px 1px 1px white, 1px 22px 1px 1px white;
+						box-shadow: 0 10px 0 1px white, 0 16px 0 1px white, 0 22px 0 1px white;
+					}
+				}
 				
 			}
+
 		}
-		a.expand{ 
-			position: absolute; top: 3px; right:-20px;text-indent: -50000px;
-			display: block;
-			width: 30px;
-			height: 31px;
-			background-color: $dark-blue;
-			box-sizing: border-box;
-			padding:0 8px;
-			span{
-				/*position: absolute;*/
-				display: block;
-				width: 0.88889rem;
-				height: 0;
-				-webkit-box-shadow: 1px 10px 1px 1px white, 1px 16px 1px 1px white, 1px 22px 1px 1px white;
-				box-shadow: 0 10px 0 1px white, 0 16px 0 1px white, 0 22px 0 1px white;
-			}
-		}
+				
 		
 	}
+
+	
 	
 	
 }
@@ -423,7 +463,7 @@ body{ background: url(../images/fabric.jpg);}
 
 #Feeds{
 	font-size: 0.85em;
-	background-color: $light-blue;
+	background-color: $darkest-green;
 	.row{position: relative;}
 	.container{ padding: 0; margin: 0 auto;}
 	.social-icon{ 
@@ -454,7 +494,7 @@ body{ background: url(../images/fabric.jpg);}
 		h6{font-size: 0.75em}
 	}
 	.selectB{
-		background-color: #c7c7c7;
+		background-color: $darkest-green;
 		position: relative;
 		h4, h5, h6, { color: #fff; background-color: $darker-bg-trans; float: left; clear: both; padding: 3px;}
 	}
@@ -504,7 +544,7 @@ body{ background: url(../images/fabric.jpg);}
 
 
 #WordPress {
-	background-color: #c7c7c7;
+	background-color: $yellow;
 	.social-icon{ width: 66px;}
 	.activity{ background-color: $off-white; border-width: 5px 0 5px; border-style: solid; border-color: #3a3a3a;
 				a{ color: $dark-brown;}
@@ -564,7 +604,16 @@ body{ background: url(../images/fabric.jpg);}
 
 
 #Experience{
-	background: $light-blue;
+	background: $darkest-green;
+	font-family: 'Sanchez', serif;
+	.container{padding: 0 20px;}
+	.job{padding: 10px 0; clear: both;}
+	h1{ color: $pink; }
+	h2{ font-size: 1.2rem; float: left;}
+	h3{ font-size: 1rem; float: right;}
+	ul{ clear: both; margin: 10px 0; font-family: 'Sanchez', serif;
+		li{padding: 0.5rem 0; color: $light-blue;}
+	}
 }
 
 
@@ -614,10 +663,9 @@ body{ background: url(../images/fabric.jpg);}
 		
 	}
 	#Intro{
+		#video-bg{ width: auto; left: -100%;}
 		.container{ padding: 12px 0;
-			.columns{
-				padding:1em;
-			}
+
 			.description{
 				
 				h2{font-size: 1.33em; }
@@ -640,7 +688,8 @@ body{ background: url(../images/fabric.jpg);}
 @media (min-width: 480px) and (max-width: 580px) {
   /* Style adjustments for viewports 768px and over go here */
  #Intro{
-	 
+ 	.container{ padding: 0;}
+	 #video-bg{ width: auto; left: -100%;}
 	 .buttonList{top: 0;}
  }
  #Social{
@@ -654,7 +703,7 @@ body{ background: url(../images/fabric.jpg);}
 
 @media (min-width: 580px) and (max-width: 768px) {
 #Intro{
-	 
+	 #video-bg{ width: 100%;}
 	 .buttonList{top: 0;}
  }
 #Feeds{
@@ -665,7 +714,10 @@ body{ background: url(../images/fabric.jpg);}
 @media (min-width: 768px) and (max-width: 979px) {
   /* Style adjustments for viewports 979px and over go here */
  #Intro{
-	 
+ .container{ padding: 0;
+		
+		.columns{padding: 5em 1em 2em;}
+	}
 	 .buttonList{top: 0;}
  }
  #Feeds{
@@ -677,7 +729,9 @@ body{ background: url(../images/fabric.jpg);}
   /* Style adjustments for viewports 979px and over go here */
  .wrapper{ width: auto; margin: 0 auto;}
  #Intro{
-	 
+	 .container{ padding: 0;
+		 .columns{padding: 12em 1em 3em;}
+	 }
 	 .buttonList{top: 0;}
  }
  #Feeds{
@@ -688,14 +742,17 @@ body{ background: url(../images/fabric.jpg);}
 @media (min-width: 1200px){
 	.wrapper{ max-width: 96em; margin: 0 auto;}
 	#Intro{
+		.container{ padding: 0;
 		
-		.role-selector{
+		.columns{padding: 22em 1em 4em;}
+	}
+		/*.role-selector{
 			padding: 1em;
 			background: $dark-bg-trans;
 			h3{ color: $light-blue; font-size: 1.17em; font-family: 'Sanchez', serif; line-height: 2em; float: left; margin-right: 10px;}
 			
-		}
-		.role-nav{
+		}*/
+		/*.role-nav{
 			background: none;
 			height: auto;
 			width: auto;
@@ -713,7 +770,7 @@ body{ background: url(../images/fabric.jpg);}
 				}
 			}
 			a.expand{ display: none;}
-		}
+		}*/
 	}//End #Intro
 	
 	#Feeds{

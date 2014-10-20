@@ -56,6 +56,9 @@ BUNMUN =
 		//Preload Images
 		var roleImages = new Array();
 		var count = 0;
+		var relativePos = 0;
+		var rolePositionTop = 0;
+		var listPositionTop = 0;
 		$(".role-button").each(function(){
 			
 			var imgName = $(this).attr("data-image");
@@ -73,9 +76,10 @@ BUNMUN =
 		
 		
 		var listHeight = $(".buttonList").height();
-		var listPositionTop = $(".role-button:first-child").position().top;
+		listPositionTop = $(".role-button:first-child").position().top;
 			console.log("Height of list: "+listHeight);
 			console.log("List Position: "+listPositionTop);
+			console.log("Relative pos: "+relativePos);
 		
 		$(".role-button").click(function(e){
 			e.preventDefault();
@@ -91,8 +95,10 @@ BUNMUN =
 			$(".description[data-role='"+role+"']").slideDown();
 			
 			//Remove and Add selected class
+			$("li.name.selected").removeClass("selected");
 			$(".role-button.selected").removeClass("selected");
 			$(this).addClass("selected");
+			$(this).parent().addClass("selected");
 			
 			//Set background image
 			var roleNum = $(this).attr("data-number");
@@ -117,47 +123,70 @@ BUNMUN =
 			}, 500);
 			
 			//Get top position of current role
-			var rolePositionTop = $(this).position().top;
-			console.log("Role Position Top: "+rolePositionTop);
-			var relativePos = listPositionTop - rolePositionTop;
+			rolePositionTop = $(this).position().top;
+			console.log("Current Role Position Top: "+rolePositionTop);
+			relativePos = listPositionTop - rolePositionTop;
 			
 			console.log("relativePos: "+relativePos);
 			
 			//Reposition the top of the buttonList
 			$(".buttonList").css({
-				'top': relativePos
+				'top': '0'
 			});
 			
-			$(".role-button:not(.selected)").css("visibility", "hidden");
+			//Reposition the top of the selected role
+			$(".role-button.selected").css({
+				'top': '0'
+			});
+			
+			$(".role-button:not(.selected)").css({'position': 'absolute', 'left': '-50000px'});
 
 			}
 			else{
 				
-				//alert("This is selected!");
+				//If the selected role is clicked, the role nav opens up
 				var visibleCount = $('.role-button').filter(function() {
-										return $(this).css('visibility') !== 'hidden';
+										return $(this).css('position') !== 'absolute';
 									}).length;
 				
 				console.log("Visible Count: "+visibleCount);
 				
-				//If other roles are visible, then hide them
+				//If other roles are visible, then hide them with position: absolute
 				
 				if(visibleCount > 1){
-					$(".role-button:not(.selected)").css("visibility", "hidden");
+					$(".role-button:not(.selected)").css({'position': 'absolute', 'left': '-50000px'});
+					$(".buttonList").css({
+				'top': '0'
+			});
 				}
-				else{ $(".role-button").css("visibility", "visible"); }
+				else{ 
+					$(".role-button").css({'position': 'relative', 'left': '0', 'top': '0'});
+					$(".buttonList").css({
+						'top': relativePos
+						}); 
+				}
 				
 			} //END IF VISIBLE
 		});
 		
 		
-		$(".expand").toggle(function(){
-			
-			$(".role-button").css("visibility", "visible");
-			
-		}, function(){
-			
-			$(".role-button:not(.selected)").css("visibility", "hidden");
+		$(".expand").click(function(){
+			var visibleCount = $('.role-button').filter(function() {
+										return $(this).css('position') !== 'absolute';
+									}).length;
+									
+									if(visibleCount > 1){
+					$(".role-button:not(.selected)").css({'position': 'absolute', 'left': '-50000px'});
+					$(".buttonList").css({
+				'top': '0'
+			});
+				}
+				else{ 
+					$(".role-button").css({'position': 'relative', 'left': '0', 'top': '0'});
+					$(".buttonList").css({
+						'top': relativePos
+						}); 
+				}
 			
 		});
 		
@@ -170,7 +199,7 @@ BUNMUN =
 			
 			var thisHeight = $(this).height();
 			
-			if(thisHeight > tallestHeight) tallestHeight = thisHeight;
+			if(thisHeight > tallestHeight){ tallestHeight = thisHeight;}
 			
 		});
 		
@@ -195,7 +224,7 @@ BUNMUN =
 		$.getJSON("../Bunmun_Foundation/php/TwitterSettingsEcho.php", function(data) {
 		
 			$.each(data, function(i){
-				var linkified = $.linkify(data[i].text)
+				var linkified = $.linkify(data[i].text);
 				var postTemplate = "<li><p>"+linkified+"</p><time datetime='"+data[i].created_at+"'>"+BUNMUN.TwitterDateConverter(data[i].created_at)+"</time><span><a class='tweet_reply' title='Reply' href='https://twitter.com/intent/tweet?in_reply_to="+data[i].id_str+"'>Reply</a><a class='tweet_retweet' title='Retweet' href='https://twitter.com/intent/retweet?tweet_id="+data[i].id_str+"'>Retweet</a><a class='tweet_fave' title='Favorite' href='https://twitter.com/intent/favorite?tweet_id="+data[i].id_str+"'>Favorite</a></span></li>";
 			
 			$("#Twitter .posts").append(postTemplate);
