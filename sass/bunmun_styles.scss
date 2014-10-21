@@ -340,8 +340,8 @@ body{ background: url(../images/fabric.jpg);}
 #Intro{  
 	padding: 0;
 	#video-bg{width: 100%; position: fixed !important; top: 0; left: 0; background: transparent url(../images/video-bg2.jpg) no-repeat; background-size: cover; z-index: -100;}
+	#video-img{ width: 100%; position: fixed; top: 0; left: 0; z-index: -100;}
 	.container{ padding: 0;
-		
 		.columns{padding:1em;}
 	}
 	.role-descriptions{

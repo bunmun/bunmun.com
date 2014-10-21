@@ -1,4 +1,10 @@
-<?php require_once("php/functions.php"); ?>
+<?php 
+require_once 'php/Mobile_Detect.php';
+require_once("php/functions.php"); 
+$detect = new Mobile_Detect;
+$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
+$scriptVersion = $detect->getScriptVersion();
+?>
 <!DOCTYPE html>
 <!--[if IE 8]> <html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!-->
@@ -36,11 +42,15 @@
   		</div>
   	</header>
   	<section id="Intro" class="row">
-  	<video autoplay loop muted poster="images/video-bg2.jpg" id="video-bg">
+  	<?php $check = $detect->isMobile(); if($check): ?>
+  		<img id="video-img" src="images/video-bg2.jpg">
+  	<?php else: ?>
+  		<video autoplay loop muted poster="images/video-bg2.jpg" id="video-bg">
   			<source src="video/deskwork2.webm" type="video/webm">
   			<source src="video/deskwork2.ogg" type="video/ogg">
   			<source src="video/deskwork2.mp4" type="video/mp4">
   		</video>
+  	<?php endif; ?>
 	  		<div class="container group">
 	  		<div class="large-5 columns"></div>
 	  		<div class="large-7 columns">
