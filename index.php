@@ -38,11 +38,11 @@ $scriptVersion = $detect->getScriptVersion();
 	<header id="MainHeader" class="row">
 		
   		<div class="large-12 columns container">
-	  		<h1><span class="highlight">My name is Ben Wong <span class="alternate">aka</span> <span class="light">Bun Mun</span><span class="alternate">.</span></span></h1>
+	  		<h1><span class="highlight">Ben Wong <span class="alternate">aka</span> <span class="light">Bun Mun</span><span class="alternate">.</span></span></h1>
   		</div>
   	</header>
   	<section id="Intro" class="row">
-  	<?php $check = $detect->isMobile(); if($check): ?>
+  	<?php $checkMobile = $detect->isMobile(); $checkTablet = $detect->isTablet(); if($checkMobile || $checkTablet): ?>
   		<img id="video-img" src="images/video-bg2.jpg">
   	<?php else: ?>
   		<video autoplay loop muted poster="images/video-bg2.jpg" id="video-bg">

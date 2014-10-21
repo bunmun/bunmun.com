@@ -305,7 +305,7 @@ td { vertical-align: top; }
    Author: Ben Wong
    ========================================================================== */
 
-h1{font-family: 'Lato', sans-serif; font-weight: 100; letter-spacing: 1px; text-transform: uppercase;}
+h1{font-family: 'Lato', sans-serif; font-weight: 300; letter-spacing: 1px; text-transform: uppercase;}
 
 h2, h3, h4, h5, h6{font-family: 'Lato', sans-serif; margin: 0; padding: 0;}
 p{font-family: 'Lato', sans-serif; font-weight: 300;}
@@ -325,8 +325,8 @@ body{ background: url(../images/fabric.jpg);}
 #MainHeader{
 	background-color: $darkest-green-trans;
 	text-align: center;
-	.container{ padding: 20px;}
-	h1{ color: $light-blue; font-size: 20px;
+	.container{ padding: 10px 20px;}
+	h1{ color: $light-blue; font-size: 1.27em;font-weight: 300;
 		.light{ color: $light-blue;}
 		.alternate{font-weight: 100; font-size: 14px; text-transform: lowercase;}
 	}
@@ -339,8 +339,9 @@ body{ background: url(../images/fabric.jpg);}
 ----------------------------------------------------*/
 #Intro{  
 	padding: 0;
+	position: relative;
 	#video-bg{width: 100%; position: fixed !important; top: 0; left: 0; background: transparent url(../images/video-bg2.jpg) no-repeat; background-size: cover; z-index: -100;}
-	#video-img{ width: 100%; position: fixed; top: 0; left: 0; z-index: -100;}
+	#video-img{ width: 100%; position: absolute; top: 0px; left: 0px; z-index: -100;}
 	.container{ padding: 0;
 		.columns{padding:1em;}
 	}
@@ -349,7 +350,7 @@ body{ background: url(../images/fabric.jpg);}
 		.description{
 			display: none;		
 			margin-bottom: 1em;
-			h2{ font-size: 1.4em; font-family: 'Lato', sans-serif; line-height: 2em;}
+			h2{ font-size: 1.17em; font-family: 'Lato', sans-serif; line-height: 2em;}
 			p{font-size: 1em; margin-bottom: 0.3em; line-height: 2em;}
 			
 		}
@@ -365,7 +366,7 @@ body{ background: url(../images/fabric.jpg);}
 	#RoleSelector{ 
 		padding: 0.75em 1em;
 		background: $dark-bg-trans; text-align: center;
-		h3{ color: $light-blue; font-size: 1.17em; font-weight: 100; letter-spacing: 1px; line-height: 2em; text-align: center;}
+		h3{ color: $light-blue; font-size: 1.17em; font-weight: 300; letter-spacing: 1px; line-height: 2em; text-align: center;}
 		
 		.social-nav{
 			text-align: center;
@@ -663,7 +664,8 @@ body{ background: url(../images/fabric.jpg);}
 		
 	}
 	#Intro{
-		#video-bg{ width: auto; left: -100%;}
+		#video-img, #video-bg{ width: auto; left: -100%;}
+		
 		.container{ padding: 12px 0;
 
 			.description{
@@ -689,7 +691,7 @@ body{ background: url(../images/fabric.jpg);}
   /* Style adjustments for viewports 768px and over go here */
  #Intro{
  	.container{ padding: 0;}
-	 #video-bg{ width: auto; left: -100%;}
+	 #video-img, #video-bg{ width: auto; left: -100%;}
 	 .buttonList{top: 0;}
  }
  #Social{
@@ -703,7 +705,7 @@ body{ background: url(../images/fabric.jpg);}
 
 @media (min-width: 580px) and (max-width: 768px) {
 #Intro{
-	 #video-bg{ width: 100%;}
+	 #video-img, #video-bg{ width: 100%;}
 	 .buttonList{top: 0;}
  }
 #Feeds{
@@ -713,10 +715,13 @@ body{ background: url(../images/fabric.jpg);}
 
 @media (min-width: 768px) and (max-width: 979px) {
   /* Style adjustments for viewports 979px and over go here */
+ #MainHeader{
+	 
+ }
  #Intro{
  .container{ padding: 0;
 		
-		.columns{padding: 5em 1em 2em;}
+		.columns{padding: 2em 1em 1em;}
 	}
 	 .buttonList{top: 0;}
  }
@@ -744,7 +749,7 @@ body{ background: url(../images/fabric.jpg);}
 	#Intro{
 		.container{ padding: 0;
 		
-		.columns{padding: 22em 1em 4em;}
+		.columns{padding: 16em 1em 4em;}
 	}
 		/*.role-selector{
 			padding: 1em;
