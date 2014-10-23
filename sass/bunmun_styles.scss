@@ -364,28 +364,30 @@ body{ background: url(../images/fabric.jpg);}
 	}
 	
 	#RoleSelector{ 
-		padding: 0.75em 1em;
+		padding: 1em;
 		background: $dark-bg-trans; text-align: center;
 		h3{ color: $light-blue; font-size: 1.17em; font-weight: 300; letter-spacing: 1px; line-height: 2em; text-align: center;}
 		
 		.social-nav{
 			text-align: center;
-			padding: 0.25em 0;
-			.socialIcon{font-family: 'socicon'; font-size: 1.4em; color: $off-white; padding: 0 0.25em; text-align: center;
+			padding: 0.5em 0;
+			.socialIcon{font-family: 'socicon'; font-size: 1.4em; color: $off-white; padding: 0 4px; text-align: center;
 			}
 			a:hover{
 			.socialIcon{color: $pink;}
 		}
 		}
 		
-		.columns{ padding: 0;}
+		//.columns{ padding: 0;}
 		
 		.role-selector{
 			text-align: center;
+			padding: 0.5em 0;
 			.role-nav{
 				background: none;
 				height: 37px;
 				position: relative;
+				
 				//max-width: 400px;
 				ul.buttonList{ 
 					//width: auto;
@@ -664,7 +666,7 @@ body{ background: url(../images/fabric.jpg);}
 		
 	}
 	#Intro{
-		#video-img, #video-bg{ width: auto; left: -100%;}
+		#video-img, #video-bg{ width: auto; left: -70%;}
 		
 		.container{ padding: 12px 0;
 
@@ -691,7 +693,8 @@ body{ background: url(../images/fabric.jpg);}
   /* Style adjustments for viewports 768px and over go here */
  #Intro{
  	.container{ padding: 0;}
-	 #video-img, #video-bg{ width: auto; left: -100%;}
+	 #video-img, #video-bg{ width: auto; left: -60%;}
+	 .social-nav, .role-selector{ padding:0;}
 	 .buttonList{top: 0;}
  }
  #Social{
@@ -705,8 +708,10 @@ body{ background: url(../images/fabric.jpg);}
 
 @media (min-width: 580px) and (max-width: 768px) {
 #Intro{
-	 #video-img, #video-bg{ width: 100%;}
+	 #video-img, #video-bg{ width: auto; left: -50%;}
 	 .buttonList{top: 0;}
+	 .social-nav, .role-selector{ padding:0;}
+	 
  }
 #Feeds{
 		.rssItem{ width: 50%;}
@@ -719,6 +724,12 @@ body{ background: url(../images/fabric.jpg);}
 	 
  }
  #Intro{
+ 	#RoleSelector{
+	 	.social-nav, .role-selector{ padding:0;}
+	 	.social-nav{
+		 		.socialIcon{ padding: 0 0.25em;}
+	 	}
+ 	}
  .container{ padding: 0;
 		
 		.columns{padding: 2em 1em 1em;}
@@ -734,8 +745,15 @@ body{ background: url(../images/fabric.jpg);}
   /* Style adjustments for viewports 979px and over go here */
  .wrapper{ width: auto; margin: 0 auto;}
  #Intro{
+ 	#RoleSelector{
+	 	.social-nav, .role-selector{ padding:0;}
+	 	.social-nav{
+		 		.socialIcon{ padding: 0 0.5em;}
+	 	}
+ 	}
+ 
 	 .container{ padding: 0;
-		 .columns{padding: 12em 1em 3em;}
+		 .columns{padding: 9em 1em 3em;}
 	 }
 	 .buttonList{top: 0;}
  }
@@ -747,6 +765,12 @@ body{ background: url(../images/fabric.jpg);}
 @media (min-width: 1200px){
 	.wrapper{ max-width: 96em; margin: 0 auto;}
 	#Intro{
+		#RoleSelector{
+	 		.social-nav, .role-selector{ padding:0;}
+	 		.social-nav{
+		 		.socialIcon{ padding: 0 0.75em;}
+	 		}
+	 	}
 		.container{ padding: 0;
 		
 		.columns{padding: 16em 1em 4em;}

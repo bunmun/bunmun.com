@@ -43,7 +43,7 @@ $scriptVersion = $detect->getScriptVersion();
   	</header>
   	<section id="Intro" class="row">
   	<?php $checkMobile = $detect->isMobile(); $checkTablet = $detect->isTablet(); if($checkMobile || $checkTablet): ?>
-  		<img id="video-img" src="images/video-bg2.jpg">
+  		<style> #Intro{ background: url("images/video-bg2.jpg") no-repeat; background-size:cover; background-position: 20% 10%; }</style>
   	<?php else: ?>
   		<video autoplay loop muted poster="images/video-bg2.jpg" id="video-bg">
   			<source src="video/deskwork2.webm" type="video/webm">
@@ -90,7 +90,7 @@ $scriptVersion = $detect->getScriptVersion();
 			  		<h3>I've also been known as a:</h3>
 			  		<nav class="role-nav">
 				  		<ul class="title-area buttonList">
-				  			<li class="name"><a href="#" class="role-button selected" data-role="strategic-services-manager" data-image="" data-image-size="auto" data-image-pos="95% 10%">Strategic Services Manager</a></li>
+				  			<li class="name"><a href="#" class="role-button selected" data-role="strategic-services-manager" data-image="<?php if($checkMobile || $checkTablet):?>video-bg2.jpg<?php endif;?>" data-image-size="cover" data-image-pos="20% 10%">Strategic Services Manager</a></li>
 				  			<li class="name"><a href="#" class="role-button" data-role="digital-experience-director" data-image="blueion.jpg" data-image-size="cover" data-image-pos="center center">Digital Experience Director</a></li>
 				  			<li class="name"><a href="#" class="role-button" data-role="web-designer-developer" data-image="design_develop_bw.jpg" data-image-size="cover" data-image-pos="center">Designer &amp; Developer</a></li>
 				  			<li class="name"><a href="#" class="role-button" data-role="conference-speaker" data-image="refresh.jpg" data-image-size="cover" data-image-pos="left top">Conference Speaker</a></li>
@@ -103,16 +103,16 @@ $scriptVersion = $detect->getScriptVersion();
   		  		</div><!--END Column -->
   		  		<div class="large-6 columns social-nav">
 	  		  		<h3>Find me at:</h3>
-	  		  		<a href="http://www.facebook.com/bunmun"><span class="socialIcon">b</span></a>
-	  		  		<a href="http://www.twitter.com/bunmun"><span class="socialIcon">a</span></a>
-	  		  		<a href="http://www.selectb.com"><span class="socialIcon">y</span></a>
-	  		  		<a href="http://bunmblr.bunmun.com"><span class="socialIcon">z</span></a>
-	  		  		<a href="https://www.flickr.com/photos/selectb/"><span class="socialIcon">v</span></a>
-	  		  		<a href="http://instagram.com/bunmun"><span class="socialIcon">x</span></a>
-	  		  		<a href="http://www.youtube.com/kidcapsule"><span class="socialIcon">r</span></a>
-	  		  		<a href="https://soundcloud.com/b-23"><span class="socialIcon">n</span></a>
-	  		  		<a href="http://www.pinterest.com/bunmun"><span class="socialIcon">d</span></a>
-	  		  		<a href="https://www.linkedin.com/pub/ben-wong/38/4a1/612"><span class="socialIcon">j</span></a>
+	  		  		<a class="socialIcon" href="http://www.facebook.com/bunmun">b</a>
+	  		  		<a class="socialIcon" href="http://www.twitter.com/bunmun">a</a>
+	  		  		<a class="socialIcon" href="http://www.selectb.com">y</a>
+	  		  		<a class="socialIcon" href="http://bunmblr.bunmun.com">z</a>
+	  		  		<a class="socialIcon" href="https://www.flickr.com/photos/selectb/">v</a>
+	  		  		<a class="socialIcon" href="http://instagram.com/bunmun">x</a>
+	  		  		<a class="socialIcon" href="http://www.youtube.com/kidcapsule">r</a>
+	  		  		<a class="socialIcon" href="https://soundcloud.com/b-23">n</a>
+	  		  		<a class="socialIcon" href="http://www.pinterest.com/bunmun">d</a>
+	  		  		<a class="socialIcon" href="https://www.linkedin.com/pub/ben-wong/38/4a1/612">j</a>
   		  		</div>
   		  		
   		  		
