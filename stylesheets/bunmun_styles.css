@@ -623,9 +623,9 @@ body {
 /* line 374, ../sass/bunmun_styles.scss */
 #Intro #RoleSelector .social-nav .socialIcon {
   font-family: 'socicon';
-  font-size: 1.4em;
+  font-size: 1.27em;
   color: #f6f6f5;
-  padding: 0 4px;
+  padding: 0 0.15em;
   text-align: center;
 }
 /* line 377, ../sass/bunmun_styles.scss */
@@ -1185,46 +1185,46 @@ body {
   #Intro .container {
     padding: 12px 0;
   }
-  /* line 675, ../sass/bunmun_styles.scss */
+  /* line 674, ../sass/bunmun_styles.scss */
   #Intro .container .description h2 {
     font-size: 1.33em;
   }
-  /* line 678, ../sass/bunmun_styles.scss */
+  /* line 677, ../sass/bunmun_styles.scss */
   #Intro .buttonList {
     top: 0;
   }
 
-  /* line 681, ../sass/bunmun_styles.scss */
+  /* line 680, ../sass/bunmun_styles.scss */
   #Social .wrapSocial {
     border-top: 5px solid #342c24;
     border-width: 5px 0 0;
   }
-  /* line 682, ../sass/bunmun_styles.scss */
+  /* line 681, ../sass/bunmun_styles.scss */
   #Social .container {
     padding: 0 0 10em;
   }
 
-  /* line 686, ../sass/bunmun_styles.scss */
+  /* line 685, ../sass/bunmun_styles.scss */
   #Feeds .rssItem {
     width: 100%;
   }
-  /* line 688, ../sass/bunmun_styles.scss */
+  /* line 687, ../sass/bunmun_styles.scss */
   #Feeds .twitter {
-    width: 50%;
+    /*width: 50%;*/
   }
 }
 @media (min-width: 480px) and (max-width: 580px) {
   /* Style adjustments for viewports 768px and over go here */
-  /* line 695, ../sass/bunmun_styles.scss */
+  /* line 694, ../sass/bunmun_styles.scss */
   #Intro .container {
     padding: 0;
   }
-  /* line 696, ../sass/bunmun_styles.scss */
+  /* line 695, ../sass/bunmun_styles.scss */
   #Intro #video-img, #Intro #video-bg {
     width: auto;
     left: -60%;
   }
-  /* line 697, ../sass/bunmun_styles.scss */
+  /* line 696, ../sass/bunmun_styles.scss */
   #Intro .social-nav, #Intro .role-selector {
     padding: 0;
   }
@@ -1257,82 +1257,86 @@ body {
   #Intro .social-nav, #Intro .role-selector {
     padding: 0;
   }
+  /* line 715, ../sass/bunmun_styles.scss */
+  #Intro .social-nav .socialIcon {
+    font-size: 1.5em;
+  }
 
-  /* line 717, ../sass/bunmun_styles.scss */
+  /* line 720, ../sass/bunmun_styles.scss */
   #Feeds .rssItem {
     width: 50%;
   }
 }
 @media (min-width: 768px) and (max-width: 979px) {
   /* Style adjustments for viewports 979px and over go here */
-  /* line 728, ../sass/bunmun_styles.scss */
+  /* line 731, ../sass/bunmun_styles.scss */
   #Intro #RoleSelector .social-nav, #Intro #RoleSelector .role-selector {
     padding: 0;
   }
-  /* line 730, ../sass/bunmun_styles.scss */
+  /* line 733, ../sass/bunmun_styles.scss */
   #Intro #RoleSelector .social-nav .socialIcon {
     padding: 0 0.25em;
   }
-  /* line 733, ../sass/bunmun_styles.scss */
+  /* line 736, ../sass/bunmun_styles.scss */
   #Intro .container {
     padding: 0;
   }
-  /* line 735, ../sass/bunmun_styles.scss */
+  /* line 738, ../sass/bunmun_styles.scss */
   #Intro .container .columns {
     padding: 2em 1em 1em;
   }
-  /* line 737, ../sass/bunmun_styles.scss */
+  /* line 740, ../sass/bunmun_styles.scss */
   #Intro .buttonList {
     top: 0;
   }
 
-  /* line 740, ../sass/bunmun_styles.scss */
+  /* line 743, ../sass/bunmun_styles.scss */
   #Feeds .rssItem {
     width: 33.333333%;
   }
 }
 @media (min-width: 979px) and (max-width: 1200px) {
   /* Style adjustments for viewports 979px and over go here */
-  /* line 746, ../sass/bunmun_styles.scss */
+  /* line 749, ../sass/bunmun_styles.scss */
   .wrapper {
     width: auto;
     margin: 0 auto;
   }
 
-  /* line 749, ../sass/bunmun_styles.scss */
+  /* line 752, ../sass/bunmun_styles.scss */
   #Intro #RoleSelector .social-nav, #Intro #RoleSelector .role-selector {
     padding: 0;
   }
-  /* line 751, ../sass/bunmun_styles.scss */
+  /* line 754, ../sass/bunmun_styles.scss */
   #Intro #RoleSelector .social-nav .socialIcon {
     padding: 0 0.5em;
   }
-  /* line 755, ../sass/bunmun_styles.scss */
+  /* line 758, ../sass/bunmun_styles.scss */
   #Intro .container {
     padding: 0;
   }
-  /* line 756, ../sass/bunmun_styles.scss */
+  /* line 759, ../sass/bunmun_styles.scss */
   #Intro .container .columns {
     padding: 9em 1em 3em;
   }
-  /* line 758, ../sass/bunmun_styles.scss */
+  /* line 761, ../sass/bunmun_styles.scss */
   #Intro .buttonList {
     top: 0;
   }
 
-  /* line 761, ../sass/bunmun_styles.scss */
+  /* line 764, ../sass/bunmun_styles.scss */
   #Feeds .rssItem {
     width: 25%;
   }
 }
 @media (min-width: 1200px) {
-  /* line 766, ../sass/bunmun_styles.scss */
+  /* line 769, ../sass/bunmun_styles.scss */
   .wrapper {
     max-width: 96em;
     margin: 0 auto;
   }
 
-  /* line 767, ../sass/bunmun_styles.scss */
+  /* line 770, ../sass/bunmun_styles.scss */
   #Intro {
     /*.role-selector{
     	padding: 1em;
@@ -1360,24 +1364,24 @@ body {
     	a.expand{ display: none;}
     }*/
   }
-  /* line 769, ../sass/bunmun_styles.scss */
+  /* line 772, ../sass/bunmun_styles.scss */
   #Intro #RoleSelector .social-nav, #Intro #RoleSelector .role-selector {
     padding: 0;
   }
-  /* line 771, ../sass/bunmun_styles.scss */
+  /* line 774, ../sass/bunmun_styles.scss */
   #Intro #RoleSelector .social-nav .socialIcon {
     padding: 0 0.75em;
   }
-  /* line 774, ../sass/bunmun_styles.scss */
+  /* line 777, ../sass/bunmun_styles.scss */
   #Intro .container {
     padding: 0;
   }
-  /* line 776, ../sass/bunmun_styles.scss */
+  /* line 779, ../sass/bunmun_styles.scss */
   #Intro .container .columns {
     padding: 16em 1em 4em;
   }
 
-  /* line 806, ../sass/bunmun_styles.scss */
+  /* line 809, ../sass/bunmun_styles.scss */
   #Feeds .rssItem {
     width: 20%;
   }
@@ -1387,7 +1391,7 @@ body {
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
 @media print {
-  /* line 816, ../sass/bunmun_styles.scss */
+  /* line 819, ../sass/bunmun_styles.scss */
   * {
     background: transparent !important;
     color: black !important;
@@ -1397,45 +1401,45 @@ body {
   }
 
   /* Black prints faster: h5bp.com/s */
-  /* line 817, ../sass/bunmun_styles.scss */
+  /* line 820, ../sass/bunmun_styles.scss */
   a, a:visited {
     text-decoration: underline;
   }
 
-  /* line 818, ../sass/bunmun_styles.scss */
+  /* line 821, ../sass/bunmun_styles.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 819, ../sass/bunmun_styles.scss */
+  /* line 822, ../sass/bunmun_styles.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
 
-  /* line 820, ../sass/bunmun_styles.scss */
+  /* line 823, ../sass/bunmun_styles.scss */
   .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
     content: "";
   }
 
   /* Don't show links for images, or javascript/internal links */
-  /* line 821, ../sass/bunmun_styles.scss */
+  /* line 824, ../sass/bunmun_styles.scss */
   pre, blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
-  /* line 822, ../sass/bunmun_styles.scss */
+  /* line 825, ../sass/bunmun_styles.scss */
   thead {
     display: table-header-group;
   }
 
   /* h5bp.com/t */
-  /* line 823, ../sass/bunmun_styles.scss */
+  /* line 826, ../sass/bunmun_styles.scss */
   tr, img {
     page-break-inside: avoid;
   }
 
-  /* line 824, ../sass/bunmun_styles.scss */
+  /* line 827, ../sass/bunmun_styles.scss */
   img {
     max-width: 100% !important;
   }
@@ -1444,13 +1448,13 @@ body {
     margin: 0.5cm;
 }
 
-  /* line 826, ../sass/bunmun_styles.scss */
+  /* line 829, ../sass/bunmun_styles.scss */
   p, h2, h3 {
     orphans: 3;
     widows: 3;
   }
 
-  /* line 827, ../sass/bunmun_styles.scss */
+  /* line 830, ../sass/bunmun_styles.scss */
   h2, h3 {
     page-break-after: avoid;
   }

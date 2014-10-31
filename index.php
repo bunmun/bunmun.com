@@ -56,7 +56,7 @@ $scriptVersion = $detect->getScriptVersion();
 	  		<div class="large-7 columns">
 	  			<div class="role-descriptions">
 			  		<div class="description" data-role="strategic-services-manager">
-			  			<h2><span class="highlight">I am the Creative Services Manager at <a href="http://www.blackbaud.com">Blackbaud</a></span></h2>
+			  			<h2><span class="highlight">Creative &amp; Strategic Services Manager at <a href="http://www.blackbaud.com">Blackbaud</a></span></h2>
 			  			<p><span class="highlight">Charleston is known as the 'Silicon Harbor' because of its thriving tech scene. Blackbaud is the technology company that started it all. I lead a team of designers, developers and strategists to help nonprofit organizations make the world a better place.</span></p>
 			  		</div>
 			  		<div class="description" data-role="digital-experience-director">

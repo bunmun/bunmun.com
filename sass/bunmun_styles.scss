@@ -371,7 +371,7 @@ body{ background: url(../images/fabric.jpg);}
 		.social-nav{
 			text-align: center;
 			padding: 0.5em 0;
-			.socialIcon{font-family: 'socicon'; font-size: 1.4em; color: $off-white; padding: 0 4px; text-align: center;
+			.socialIcon{font-family: 'socicon'; font-size: 1.27em; color: $off-white; padding: 0 0.15em; text-align: center;
 			}
 			a:hover{
 			.socialIcon{color: $pink;}
@@ -669,7 +669,6 @@ body{ background: url(../images/fabric.jpg);}
 		#video-img, #video-bg{ width: auto; left: -70%;}
 		
 		.container{ padding: 12px 0;
-
 			.description{
 				
 				h2{font-size: 1.33em; }
@@ -685,7 +684,7 @@ body{ background: url(../images/fabric.jpg);}
 	#Feeds{
 		.rssItem{ width: 100%;}
 		
-		.twitter{ width: 50%;}
+		.twitter{ /*width: 50%;*/}
 	}
 }
 
@@ -695,6 +694,7 @@ body{ background: url(../images/fabric.jpg);}
  	.container{ padding: 0;}
 	 #video-img, #video-bg{ width: auto; left: -60%;}
 	 .social-nav, .role-selector{ padding:0;}
+
 	 .buttonList{top: 0;}
  }
  #Social{
@@ -711,6 +711,9 @@ body{ background: url(../images/fabric.jpg);}
 	 #video-img, #video-bg{ width: auto; left: -50%;}
 	 .buttonList{top: 0;}
 	 .social-nav, .role-selector{ padding:0;}
+	 .social-nav{
+		 		.socialIcon{ font-size: 1.5em;}
+	 	}
 	 
  }
 #Feeds{
