@@ -132,10 +132,14 @@ $scriptVersion = $detect->getScriptVersion();
 		<section id="Feeds">
 		<div id="MasonryContainer" class="container">
 			
-			<?php buildFeeds("http://www.selectb.com/feed/", "../Bunmun_Foundation/php/TwitterSettings.php", "http://blog.selectb.com/feed/", "http://bunmun.tumblr.com/rss"); ?>
+			<?php buildFeeds("http://www.selectb.com/feed/", "../Bunmun_Foundation/php/TwitterSettings.php", "http://blog.selectb.com/feed/", "http://bunmun.tumblr.com/rss"); 
+			?>
 										
 		</div><!-- End: .container -->
 	</section><!-- End: #Feeds -->	
+	<section id="FlickrFeed">
+		
+	</section>
 	<footer>
 		
 	</footer><!-- End: #footer

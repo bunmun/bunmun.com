@@ -13,11 +13,13 @@ function buildFeeds($feed1, $feed2, $feed3, $feed4){
 	parseJSON($feed2);
 	parserFeed($feed3);
 	parserFeed($feed4);
+	parseFlickr('72157648810524750');
 	global $feedItems;
 	global $itemsByDate;
 	
+	//var_dump($itemsByDate);
 	krsort($itemsByDate);
-	
+	var_dump($itemsByDate);
 	foreach($itemsByDate as $key => $val){
 		echo $val;
 	}
@@ -74,13 +76,12 @@ function parserFeed($feedURL) {
 		
 		
 		$itemFormat .= "<div><a href='$feedItem->link' title='$feedItem->title'><h4 class='itemTitle'> $feedItem->title</h4><div class='itemContent'></div></a><h5 class='itemDate'>".date("m/d/Y",$myTimestamp)."</h5>
-		<h5 class='itemPosted'>Posted ".howLongAgo($myTimestamp)."</h5>
+		<h6 class='itemPosted'>Posted ".howLongAgo($myTimestamp)."</h6>
 		<h6 class='itemFeedTitle'>$feedTitle</h6></div>$socialTag</div>";
 		
 		//Add to Array
 		array_push($feedItems, $itemFormat);
 		$itemsByDate[$myTimestamp] = $itemFormat;
-		
 		if($i >= 3) break;
 	}
 	
@@ -147,9 +148,12 @@ function howLongAgo($timestamp){
 	
 	$diff = time()-$timestamp;
 	$day_diff = floor($diff/86400);
+	//echo "Timestamp Calc: ".time()." - ".$timestamp."<br />";
+	//echo "Time Difference: ".$diff."<br />";
+	//echo "Day Difference: ".$day_diff."<br />";
 	$timeString = "";
 	
-	if(is_nan($day_diff) || $day_diff < 0 || $day_diff>365) $timeString = "Over a year ago";
+	if(is_nan($day_diff) || $day_diff < 0 || $day_diff>365) $timeString = "over a year ago";
 	
 	if($day_diff > 0){
 			if($diff < 60) $timeString = "just now";
@@ -164,7 +168,64 @@ function howLongAgo($timestamp){
 			elseif($day_diff < 540 && $day_diff > 365) $timeString = ceil($day_diff/30)." months ago";
 			elseif($day_diff > 540) $timeString = ceil($day_diff/365)." years ago";
 	}
-	
+	//console("HowLongAgo Timestamp: ".$timestamp." String: ".$timeString);
+	//echo "TimeString: ".$timeString."<br />";
 	return $timeString;
+}
+
+/*
+ * Flickr JSON Feed
+ */
+ 
+ function parseFlickr($photoset){
+	 
+	 global $feedItems;
+	 global $itemsByDate;
+	 
+	 $api_key = '2664d8cb688820fec02a7a6fa0282434';
+	 $secret = '2f8e9c1f325ea443';
+	 $photoset_id = $photoset;
+	 $query = 'https://api.flickr.com/services/rest/?format=json&method=flickr.photosets.getPhotos&api_key='.$api_key.'&photoset_id='.$photoset_id."&nojsoncallback=1";
+
+	$object = file_get_contents($query, TRUE);
+	$object = json_decode($object, TRUE); // stdClass object
+	//echo "<h1>".$object['photoset']['ownername']."</h1>";
 	
+	$count = 0;
+	foreach($object['photoset']['photo'] as $photo){
+		$count++;
+		$photoQuery = "https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=".$api_key."&format=rest&secret=".$photo['secret']."&photo_id=".$photo['id'];
+		
+		//echo "Photo Query: ".$photoQuery;
+		//get posted timestamp of photo
+		$photoInfo = simplexml_load_file($photoQuery);
+		$photoPosted = $photoInfo->photo->dates['posted'];
+		//echo "Original Flickr Photo Date Posted: ".$photoPosted;
+		$photoPosted = intval($photoPosted);
+		//$photoPostedDT = new DateTime();
+		//$photoPostedDT->setTimestamp($photoPosted);
+		//date_timestamp_set($photoPostedDT, $photoPosted);
+		//$photoPosted = $photoPostedDT->format('U');
+		//echo "Formatted Flickr Time Stamp: ".$photoPosted; //Timestamp has been changed.
+		
+		$imgSrc = "http://farm".$photo['farm'].".static.flickr.com/".$photo['server']."/".$photo['id']."_".$photo['secret']."_z.jpg";
+		$itemFormat = "<div class='rssItem flickr' style='background-image: url(".$imgSrc."); background-position: 50% 50%; background-size: cover;'><div class='photoInfo'><h4 class='itemTitle'>".$photo['title']."</h4><h6 class='itemPosted'>posted ".howLongAgo($photoPosted)."</h6><h6 class='itemFeedTitle'>Flickr</h6></div><span class='socialIcon'>n</span></div>";
+		array_push($feedItems, $itemFormat);
+		
+		//Check if photos were uploaded at the same time, therefore have the same timestamp.
+		// Key=>Value arrays must have unique keys, so add 10 seconds if the same timestamp exists.
+		if(array_key_exists($photoPosted, $itemsByDate) == false){ $itemsByDate[$photoPosted] = $itemFormat;}
+		else{
+			$photoPosted = strtotime('+10 seconds', $photoPosted);
+			$itemsByDate[$photoPosted] = $itemFormat;
+		}
+		if($count>=5) break;
+	}
+	
+	echo "Feed Items Length: ".count($feedItems);
+	echo "Items By Date Length: ".count($itemsByDate);
+ }
+
+function console($string){
+	echo "<script>console.log(".$string.");</script>";
 }

@@ -495,6 +495,7 @@ body{ background: url(../images/fabric.jpg);}
 		h4{font-size: 1em;}
 		h5{font-size: 0.92em;}
 		h6{font-size: 0.75em}
+		h4, h5, h6, { color: #fff; background-color: $darker-bg-trans; float: left; clear: both; padding: 3px;}
 	}
 	.selectB{
 		background-color: $darkest-green;
@@ -514,6 +515,14 @@ body{ background: url(../images/fabric.jpg);}
 		position: relative;
 		h4, h5, h6, {color: #fff; background-color: $darker-bg-trans; float: left; clear: both; padding: 3px;}
 		
+	}
+	
+	.flickr{
+		
+		height: 200px;
+		.socialIcon{ bottom: 0;}
+		.photoInfo{ position: absolute; bottom: 10px;}
+		h5, h6{ font-weight: normal;}
 	}
 	.socialIcon{font-family: 'JustVector'; font-size: 2em; color: #fff; position: absolute; bottom: 10px; right: 16px;}
 	
@@ -544,6 +553,13 @@ body{ background: url(../images/fabric.jpg);}
 	.description{ padding: 0 20px 30px;}
 }
 
+#FlickrFeed{
+	
+	clear: both;
+	background: #fff;
+	padding: 20px;
+	
+}
 
 
 #WordPress {
