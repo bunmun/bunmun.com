@@ -19,7 +19,7 @@ function buildFeeds($feed1, $feed2, $feed3, $feed4){
 	
 	//var_dump($itemsByDate);
 	krsort($itemsByDate);
-	var_dump($itemsByDate);
+	//var_dump($itemsByDate);
 	foreach($itemsByDate as $key => $val){
 		echo $val;
 	}
